@@ -26,7 +26,7 @@ Copper files are loaded from the "scripts" directory. The first script loaded is
 ## Requirements
 - [Irrlicht](http://irrlicht.sourceforge.net/)
 - [Copper Interpreter](github.com/chronologicaldot/CopperLang)
-- CupricBridge
+- [CupricBridge](github.com/chronologicaldot/CupricBridge)
 - Freetype2
 
 ### Requirements for Irrlicht
