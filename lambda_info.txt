@@ -1,0 +1,8 @@
+
+lambda functions can be passed to regular function-accepting classes as long as such lambda functions are stateless, which makes sense.
+So for example:
+
+addForeignFuncInstance(engine, "callName", [](Cu::FFIServices& ffi) -> ForeignFunc::Result {
+	// do something, like unpack Copper arguments and pass the (non-Copper) contents to a regular function
+});
+
