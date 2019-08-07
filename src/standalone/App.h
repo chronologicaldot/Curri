@@ -95,6 +95,9 @@ protected:
 
 		//! Called when the Copper Bridge EventHandler did not process the event.
 	virtual bool OnExtraEvent(const SEvent&);
+
+		//! Called when the program is about to exit but prior to IrrlichtDevice destruction
+	virtual void onClose() {}
 };
 
 #endif

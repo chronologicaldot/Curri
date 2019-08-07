@@ -120,6 +120,8 @@ App::run() {
 		checkFileRunnerErrorFlags();
 	}
 
+	onClose();
+
 	device->setEventReceiver(0); // Note: Delinking unnecessary since no pointer is saved
 
 	//device->run(); // Digest close
