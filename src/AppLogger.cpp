@@ -92,7 +92,7 @@ AppLogger::setCustomTypeNameProvider( CustomTypeNameProvider  provider ) {
 }
 
 void
-AppLogger::setWriteInterface( WriteInterface&  w )
+AppLogger::setWriteInterface( WriteInterface*  w )
 {
 	writeInterface = w;
 }

@@ -59,7 +59,7 @@ public:
 	bool createLoggingFile( irr::io::IFileSystem* );
 	void setCustomMessageProvider( CustomLogMessageProvider  provider );
 	void setCustomTypeNameProvider( CustomTypeNameProvider  provider );
-	void setWriteInterface( WriteInterface& );
+	void setWriteInterface( WriteInterface* );
 
 	void write( const irr::core::stringc&  message, bool  isError = false ); // Write a string to the output channels.
 	void flush(); // Unnecessary to call if AlwaysFlush is set to true.
