@@ -92,6 +92,12 @@ AppLogger::setCustomTypeNameProvider( CustomTypeNameProvider  provider ) {
 }
 
 void
+AppLogger::setWriteInterface( WriteInterface&  w )
+{
+	writeInterface = w;
+}
+
+void
 AppLogger::write( const stringc&  message, bool  isError ) {
 	if ( !Enabled ) return;
 
