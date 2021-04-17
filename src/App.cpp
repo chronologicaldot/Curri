@@ -154,6 +154,8 @@ App::OnEvent(const SEvent&  event) {
 
 	if ( !result )
 		return onExtraEvent(event);
+
+	return result;
 }
 
 Cu::ForeignFunc::Result

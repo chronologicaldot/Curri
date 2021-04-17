@@ -5,7 +5,7 @@
 local v_cubr_path = "../CupricBridge/src/"
 local v_copper_path = "../CopperLang/Copper/src/"
 local v_copper_stdlib_path = "../CopperLang/Copper/stdlib/"
---local v_irrext_path = "../../IrrExtensions/"
+local v_irrext_path = "../../Irrlicht/IrrExtensions/"
 local v_irrlicht_home = "/usr/local"
 local v_irrlicht_include = "/usr/local/include/irrlicht/"
 local v_freetype_include = "/usr/include/freetype2"
@@ -14,7 +14,7 @@ local v_freetype_include = "/usr/include/freetype2"
 local v_b_cubr_path = "../" .. v_cubr_path
 local v_b_copper_path = "../" .. v_copper_path
 local v_b_copper_stdlib_path = "../" .. v_copper_stdlib_path
---local v_b_irrext_path = "../" .. v_irrext_path
+local v_b_irrext_path = "../" .. v_irrext_path
 
 -- excluded files
 local nix_files = { "src/standalone/App.h", "src/standalone/App.cpp" }
@@ -45,7 +45,7 @@ workspace "Curri App"
 project "Curri App"
 	targetname	"app.out"
 	language	"C++"
-	flags		{ "C++11" }
+	cppdialect	"C++11"
 	kind		"ConsoleApp"
 	links {
 		"Irrlicht",
@@ -64,12 +64,14 @@ project "Curri App"
 		, "src/**.cpp"
 		, v_cubr_path .. "**.h"
 		, v_cubr_path .. "**.cpp"
-		--, v_irrext_path .. "**.h"
-		--, v_irrext_path .. "**.cpp"
 		, v_copper_path .. "**.h"
 		, v_copper_path .. "**.cpp"
 		, v_copper_stdlib_path .. "**.h"
 		, v_copper_stdlib_path .. "**.cpp"
+		--, v_irrext_path .. "**.h"
+		--, v_irrext_path .. "**.cpp"
+		, v_irrext_path .. "util/irrTree/irrTree.cpp"
+		, v_irrext_path .. "util/irrJSON/irrJSON.cpp"
 	}
 	removefiles {
 		"src/excludes/**.h"
@@ -84,6 +86,8 @@ project "Curri App"
 		, "-I" .. v_b_copper_stdlib_path
 		, "-I" .. v_irrlicht_include
 		--, "-I" .. v_b_irrext_path
+		, "-I" .. v_b_irrext_path .. "util/irrTree"
+		, "-I" .. v_b_irrext_path .. "util/irrJSON"
 		, "-I" .. v_freetype_include
 	}
 	linkoptions {
