@@ -47,7 +47,7 @@ protected:
 
 public:
 	App();
-	~App();
+	virtual ~App();
 	void parseArgs( int argc, const char* argv[] );
 	int run();
 	IrrlichtDevice*  getDevice(); // Only works during run()
